@@ -81,7 +81,7 @@ gulp.task('browser-sync', function() {
 	   },
 
 		// Attempt to use the URL "http://my-private-site.localtunnel.me"
-		// tunnel: "kaseyacontentrepo",
+		// tunnel: "my-private-site",
 
 		// Inject CSS changes
 		injectChanges: true
@@ -149,11 +149,11 @@ gulp.task('vendorsJs', function() {
 */
 
 gulp.task('scriptsJs', function() {
-	return 	gulp.src('./assets/js/custom/*.js')
-				.pipe(concat('custom.js'))
+	return 	gulp.src('./assets/js/scripts/*.js')
+				.pipe(concat('main.js'))
 				.pipe(gulp.dest('./assets/js'))
 				.pipe(rename( {
-					basename: "custom",
+					basename: "main",
 					suffix: '.min'
 				}))
 				.pipe(uglify())
