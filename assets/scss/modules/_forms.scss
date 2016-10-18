@@ -1,0 +1,171 @@
+.required-notice {
+	margin-bottom: 2.5%;
+}
+
+.required {
+	color: $red;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+label {
+	width: 45%;
+	margin: 0 3% 2.5% 0;
+	display: inline-block;
+	position: relative;
+
+	@include bp(phone) {
+		width: 95%;
+	}
+
+	&.city,
+	&.state,
+	&.zip {
+		width: 13%;
+		margin-right: 2.5%;
+
+		@include bp(phone) {
+			width: 28%;
+			margin-right: 4.5%;
+		}
+	}
+
+	.required {
+		position: absolute;
+		top: 12px;
+		right: -15px;
+	}
+}
+
+input,
+select {
+	box-sizing: border-box;
+	height: 35px;
+	width: 100%;
+	border-radius: $border-radius;
+	border: 2px solid lighten($primary, 50%);
+	padding: 5px 10px;
+	display: inline-block;
+	color: $primary;
+	background: white;
+	line-height: 1.4;
+
+	&:nth-of-type(even) {
+		margin-right: 0;
+	}
+}
+
+form {
+	padding-bottom: 70px;
+
+	p {
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		width: 32%;
+		vertical-align: top;
+
+		@include bp(phone) {
+			width: 100%;
+		}
+	}
+
+	@include placeholder {
+		color: $primary;
+	}
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+	position: absolute;
+	left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+	position: relative;
+	padding-left: 45px;
+	cursor: pointer;
+	line-height: 1.5em;
+	width: auto;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 2px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid lighten($primary, 50%);
+	background: white;
+	border-radius: 3px;
+	box-shadow: none;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+	font-family: FontAwesome;
+	content: "\f00c";
+	position: absolute;
+	top: 7px;
+	left: 4px;
+	font-size: 18px;
+	line-height: 0.8;
+	color: $red;
+	transition: all 0.2s;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+	opacity: 0;
+	transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+	box-shadow: none;
+	border-color: #bbb;
+	background-color: #ddd;
+}
+
+[type="checkbox"]:disabled:checked + label:after {
+	color: #999;
+}
+
+[type="checkbox"]:disabled + label {
+	color: #aaa;
+}
+
+button,
+.button {
+	background: $red;
+	border-radius: $border-radius;
+	text-transform: uppercase;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	margin-top: 25px;
+
+	&:hover {
+		background-color: #841119;
+		border-color: #640d13;
+	}
+}
+
+.center-button-wrap {
+	text-align: center;
+}

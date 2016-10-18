@@ -8,6 +8,7 @@ gulp.task( 'default', function() {
 		['scss', 'scripts', 'images:raster', 'images:vector'],
 		'browser-sync'
 	);
+	gulp.watch('**.html', plugins.browserSync.reload);
 	gulp.watch('./assets/img/raw/**/*', ['images:raster', 'images:vector']);
 	gulp.watch('./assets/scss/**/*.scss', ['scss']);
 	gulp.watch(['./assets/js/vendor/*.js', './assets/js/custom/*.js'], ['scripts']);
