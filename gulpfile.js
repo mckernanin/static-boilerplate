@@ -20,3 +20,9 @@ gulp.task( 'scripts', function() {
 		plugins.browserSync.reload
 	);
 });
+
+gulp.task( 'build', function() {
+	plugins.runSequence(
+		['build:images', 'build:inline-assets']
+	);
+});
