@@ -9,7 +9,7 @@
     "gulp-cache": "^0.4.5",
     "gulp-concat": "^2.6.0",
     "gulp-concat-util": "^0.5.5",
-    "gulp-debug": "^2.1.2",
+    "gulp-debug": "^3.0.0",
     "gulp-filter": "^4.0.0",
     "gulp-ignore": "^2.0.1",
     "gulp-imagemin": "^3.0.2",
