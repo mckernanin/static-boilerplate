@@ -10,7 +10,7 @@ module.exports = function() {
 			errLogToConsole : config.scss.errors,
 			outputStyle : config.scss.output
 		}))
-		.pipe( plugins.sourcemaps.write() )
+		.pipe( plugins.sourcemaps.write('./') )
 		.pipe( plugins.autoprefixer( {
 			browsers : [ 'last 2 versions' ],
 			cascade  : false
